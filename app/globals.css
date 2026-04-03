@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 30% 98%;
+    --foreground: 340 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 15%;
+    --primary: 340 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 30% 96%;
+    --secondary-foreground: 340 20% 25%;
+    --muted: 340 20% 96%;
+    --muted-foreground: 340 10% 45%;
+    --accent: 340 50% 95%;
+    --accent-foreground: 340 75% 45%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 340 30% 90%;
+    --input: 340 30% 90%;
+    --ring: 340 75% 55%;
+    --radius: 1rem;
+
+    /* 恋爱主题自定义颜色 */
+    --love-primary: 340 82% 65%;
+    --love-secondary: 350 85% 75%;
+    --love-accent: 330 90% 70%;
+    --love-soft: 340 60% 96%;
+    --love-warm: 25 90% 75%;
+    --love-gold: 45 90% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--love-soft));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--love-primary) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--love-primary) / 0.5);
+}
+
+/* 爱心动画 */
+.heart-animation {
+  animation: heart-beat 1.2s ease-in-out infinite;
+}
+
+/* 渐变文字 */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--love-primary)), hsl(var(--love-accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 玻璃态效果 */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 柔和阴影 */
+.shadow-love {
+  box-shadow: 0 4px 20px -2px hsl(var(--love-primary) / 0.15);
+}
+
+.shadow-love-lg {
+  box-shadow: 0 10px 40px -4px hsl(var(--love-primary) / 0.2);
+}
